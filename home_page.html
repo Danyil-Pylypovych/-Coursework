@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Інформаційна система</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1>Pyldos</h1>
+            <nav>
+                <a href="#online-admission">Онлайн прийом</a>
+                <a href="#clinics">Клініки</a>
+                <a href="#tutorial">Як користуватись</a>
+                <a href="#info-system">Про систему</a>
+            </nav>
+            <div class="head">
+                <a href="#my-office" class="button">Мій кабінет</a>
+                <a href="#login-popup" class="button">Увійти</a>
+                <a href="#registration-popup" class="button">Зареєструватись</a>
+            </div>
+        </header>
+        <main>
+            <article id="online-admission">
+                <h1>Онлайн прийом</h1>
+                <div id="filter">
+                    <div id="filter-element">
+                        <label>Спеціальність</label>
+                        <select name="specialty" id="specialty">
+                            <option value="pediatrician">Педіатр</option>
+                            <option value="therapist">Терапевт</option>
+                            <option value="family doctor">Сімейний лікар</option>
+                            <option value="cardiologist">Кардіолог</option>
+                            <option value="otolaryngologist">Отоларинголог</option>
+                            <option value="neurologist">Невролог</option>
+                            <option value="surgeon">Хірург</option>
+                        </select>
+                    </div>
+                    
+                    <div id="filter-element">
+                        <label>Місто</label>
+                        <select name="city" id="city">
+                            <option value="Kyiv">Київ</option>
+                            <option value="Zhytomyr">Житомир</option>
+                            <option value="Chernihiv">Чернигів</option>
+                            <option value="Sumy">Суми</option>
+                            <option value="Poltava">Полтава</option>
+                            <option value="Cherkasy">Черкаси</option>
+                            <option value="Vinnitsa">Вінниця</option>
+                            <option value="Khmelnytskyi">Хмельницький</option>
+                            <option value="Rivne">Рівне</option>
+                            <option value="Lutsk">Луцьк</option>
+                            <option value="Ternopil">Тернопіль</option>
+                            <option value="Lviv">Львів</option>
+                            <option value="Uzhhorod">Ужгород</option>
+                            <option value="Ivano-Frankivsk">Івано-Франківськ</option>
+                            <option value="Chernivtsi">Чернівці</option>
+                            <option value="Odesa">Одеса</option>
+                            <option value="Kirovohrad">Кіровоград</option>
+                            <option value="Mykolaiv">Миколаїв</option>
+                            <option value="Kherson">Херсон</option>
+                            <option value="Zaporizhzhia">Запоріжжя</option>
+                            <option value="Dnipropetrovsk">Дніпропетровськ</option>
+                            <option value="Kharkiv">Харків</option>
+                            <option value="Donetsk">Донецьк</option>
+                            <option value="Luhansk">Луганцьк</option>
+                            <option value="Sevastopol">Севастополь</option>
+                        </select> 
+                    </div>
+                    
+                    <div id="filter-element">
+                        <label>Sex</label>
+                        <select name="sex" id="sex">
+                            <option value="male">Чоловік</option>
+                            <option value="female">Жінка</option>
+                        </select>  
+                    </div>
+                </div>
+                <div id="list-doctors">
+                    <figure class="doctor">
+                        <a href="#card-doctor">
+                            <img class="img">
+                        </a>
+                        <figcaption>
+                            Name
+                            <label>specialty</label>
+                            <label>city</label>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+            <article id="clinics">
+                <h1>Клініки</h1>
+                <div id="filter">
+                    <div id="filter-element">
+                        <label>Місто</label>
+                        <select name="city" id="city">
+                            <option value="Kyiv">Київ</option>
+                            <option value="Zhytomyr">Житомир</option>
+                            <option value="Chernihiv">Чернигів</option>
+                            <option value="Sumy">Суми</option>
+                            <option value="Poltava">Полтава</option>
+                            <option value="Cherkasy">Черкаси</option>
+                            <option value="Vinnitsa">Вінниця</option>
+                            <option value="Khmelnytskyi">Хмельницький</option>
+                            <option value="Rivne">Рівне</option>
+                            <option value="Lutsk">Луцьк</option>
+                            <option value="Ternopil">Тернопіль</option>
+                            <option value="Lviv">Львів</option>
+                            <option value="Uzhhorod">Ужгород</option>
+                            <option value="Ivano-Frankivsk">Івано-Франківськ</option>
+                            <option value="Chernivtsi">Чернівці</option>
+                            <option value="Odesa">Одеса</option>
+                            <option value="Kirovohrad">Кіровоград</option>
+                            <option value="Mykolaiv">Миколаїв</option>
+                            <option value="Kherson">Херсон</option>
+                            <option value="Zaporizhzhia">Запоріжжя</option>
+                            <option value="Dnipropetrovsk">Дніпропетровськ</option>
+                            <option value="Kharkiv">Харків</option>
+                            <option value="Donetsk">Донецьк</option>
+                            <option value="Luhansk">Луганцьк</option>
+                            <option value="Sevastopol">Севастополь</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="list-clinics">
+                    <figure class="clinic">
+                        <a href="">
+                            <img class="img">
+                        </a>
+                        <figcaption>
+                            Name
+                            <label>work schedule</label>
+                            <label>city</label>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+            <article id="tutorial">
+                <h1>Як користуватись</h1>
+                <label>gmbvjkfmcirgjmviutrmcirgmvij</label>
+            </article>
+            <article id="info-system">
+                <h1>Про систему</h1>
+                <label>rjgjvnirfnmvijtgnvirmnvjivm</label>
+            </article>
+
+            <div id="my-office" class="modal">
+                <h1>Мій кабінет</h1>
+                <nav>
+                    <a href="#history-of-receptions">Історія прийомів</a>
+                    <a href="#direction">Направлення</a>
+                    <a href="#recipes">Рецепти</a>
+                    <a href="#medical-card">Медична картка</a>
+                </nav>
+                <article id="history-of-receptions">
+                    <label>Прийоми відсутні</label>
+                </article>
+                <article id="direction">
+                    <label>Направлення відсутні</label>
+                </article>
+                <article id="recipes">
+                    <label>Рецепти відсутні</label>
+                </article>
+                <article id="medical-card">
+                    <label>Дані відсутні</label>
+                </article>
+            </div>
+
+            <div id="login-popup" class="modal">
+                <div class="content">
+                    <header>
+                        <h2>Увійти</h2>
+                        <a href="#" class="box-close">x</a>
+                    </header>
+                    <form>
+                        <div class="fields">
+                            <label>Логін</label>
+                            <input class="form" type="text" id="login" name="login" placeholder="Введіть логін">
+                            <label>Пароль</label>
+                            <input class="form" type="password" id="password" name="password">
+                        </div>
+                        <button class="button">Увійти</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="registration-popup" class="modal">
+                <div class="content">
+                    <header>
+                        <h2>Реєстрація</h2>
+                        <a href="#" class="box-close">x</a>
+                    </header>
+                    <form id="registration">
+                        <div class="fields">
+                            <label>Логін</label>
+                            <input class="form" type="text" class="login" name="login" placeholder="Введіть логін">
+                            <label>Пароль</label>
+                            <input class="form" type="password" class="password" name="password">
+                            <label>Місто проживання</label>
+                            <select name="city" class="city">
+                                <option value="Kyiv">Київ</option>
+                                <option value="Zhytomyr">Житомир</option>
+                                <option value="Chernihiv">Чернигів</option>
+                                <option value="Sumy">Суми</option>
+                                <option value="Poltava">Полтава</option>
+                                <option value="Cherkasy">Черкаси</option>
+                                <option value="Vinnitsa">Вінниця</option>
+                                <option value="Khmelnytskyi">Хмельницький</option>
+                                <option value="Rivne">Рівне</option>
+                                <option value="Lutsk">Луцьк</option>
+                                <option value="Ternopil">Тернопіль</option>
+                                <option value="Lviv">Львів</option>
+                                <option value="Uzhhorod">Ужгород</option>
+                                <option value="Ivano-Frankivsk">Івано-Франківськ</option>
+                                <option value="Chernivtsi">Чернівці</option>
+                                <option value="Odesa">Одеса</option>
+                                <option value="Kirovohrad">Кіровоград</option>
+                                <option value="Mykolaiv">Миколаїв</option>
+                                <option value="Kherson">Херсон</option>
+                                <option value="Zaporizhzhia">Запоріжжя</option>
+                                <option value="Dnipropetrovsk">Дніпропетровськ</option>
+                                <option value="Kharkiv">Харків</option>
+                                <option value="Donetsk">Донецьк</option>
+                                <option value="Luhansk">Луганцьк</option>
+                                <option value="Sevastopol">Севастополь</option>
+                            </select>
+                            <label>Номер телефону</label>
+                            <input class="form" type="tel" class="phone" name="phone" placeholder="+380xx-xxx-xx-xx">
+                            <label>Електрона пошта</label>
+                            <input class="form" type="email" class="email" name="email" placeholder="qwerty@gmail.com">
+                        </div>
+                        <button class="registration-button" onclick="registration()">Зареєструватись</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="card-doctor" class="modal">
+                <div class="content">
+                    <img class="img">
+                    <label>Спеціальність</label>
+                    <label>ФІО</label>
+                    <label>Місто</label>
+                    <label>Телефон</label>
+                    <label>Пошта</label>
+                    <div class="grafic-doctor">
+                        <label>Графік</label>
+                        <button class="online">Час</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script type="module" src="index.js"></script>
+</html>

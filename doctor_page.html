@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Система для лікаря</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Pyldos</h1>
+            <nav>
+                <a href="#my-patient">Мої пацієнти</a>
+                <a href="#reception-schedule">Графік прийомів</a>
+                <a href="#referral">Випис направлення</a>
+                <a href="#prescription">Випис рецепту</a>
+            </nav>
+            <div class="head">
+                <a href="#login-popup-doctor" class="button">Увійти</a>
+                <a href="#registration-popup-doctor" class="button">Зареєструватись</a>
+            </div> 
+        </header>
+        <main>
+            <article id="my-patient">
+                <h1>Мої пацієнти</h1>
+                <div class="filter" id="filter">
+                    <div id="filter-element">
+                        <label>Місто</label>
+                        <select name="city" id="city">
+                            <option value="Kyiv">Київ</option>
+                            <option value="Zhytomyr">Житомир</option>
+                            <option value="Chernihiv">Чернигів</option>
+                            <option value="Sumy">Суми</option>
+                            <option value="Poltava">Полтава</option>
+                            <option value="Cherkasy">Черкаси</option>
+                            <option value="Vinnitsa">Вінниця</option>
+                            <option value="Khmelnytskyi">Хмельницький</option>
+                            <option value="Rivne">Рівне</option>
+                            <option value="Lutsk">Луцьк</option>
+                            <option value="Ternopil">Тернопіль</option>
+                            <option value="Lviv">Львів</option>
+                            <option value="Uzhhorod">Ужгород</option>
+                            <option value="Ivano-Frankivsk">Івано-Франківськ</option>
+                            <option value="Chernivtsi">Чернівці</option>
+                            <option value="Odesa">Одеса</option>
+                            <option value="Kirovohrad">Кіровоград</option>
+                            <option value="Mykolaiv">Миколаїв</option>
+                            <option value="Kherson">Херсон</option>
+                            <option value="Zaporizhzhia">Запоріжжя</option>
+                            <option value="Dnipropetrovsk">Дніпропетровськ</option>
+                            <option value="Kharkiv">Харків</option>
+                            <option value="Donetsk">Донецьк</option>
+                            <option value="Luhansk">Луганцьк</option>
+                            <option value="Sevastopol">Севастополь</option>
+                        </select>
+                    </div>
+                    <div id="filter-element">
+                        <label>Sex</label>
+                        <select name="sex" id="sex">
+                            <option value="male">Чоловік</option>
+                            <option value="female">Жінка</option>
+                        </select>  
+                    </div>
+                </div>
+                <div id="list-patient">
+                    <figure class="patient">
+                        <a href="#card-patient">
+                            <img class="img">
+                        </a>
+                        <figcaption>
+                            Name
+                            <label>city</label>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+            <article id="reception-schedule">
+                <h1>Графік прийомів</h1>
+                <div class="filter" id="filter">
+                    <div id="filter-element">
+                        <label>День</label>
+                        <select name="day" id="day">
+                            <option value="today">Сьогодні</option>
+                            <option value="tomorrow">Завтра</option>
+                            <option value="other-day">Інші</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grafics">
+                    <label>Час</label>
+                    <figure class="patient">
+                        <a href="#card-patient">
+                            <img class="img">
+                        </a>
+                        <figcaption>
+                            Name
+                            <label>city</label>
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+            <article id="referral">
+                <h1>Випис направлення</h1>
+                <form class="make-referral">
+                    <div class="fields">
+                        <label>Кому ФІО</label>
+                        <input class="form" type="text" id="name_patient" name="name_patient">
+                        <label>Процедура</label>
+                        <input class="form" type="text" id="name_procedure" name="name_procedure">
+                        <label>Дата створення</label>
+                        <input class="form" type="date" id="start_date" name="start_date">
+                        <label>Термін дії</label>
+                        <input class="form" type="date" id="finish_date" name="finish_date">
+                        <label>Спеціальність лікаря</label>
+                        <select name="specialty" id="specialty">
+                            <option value="pediatrician">Педіатр</option>
+                            <option value="therapist">Терапевт</option>
+                            <option value="family doctor">Сімейний лікар</option>
+                            <option value="cardiologist">Кардіолог</option>
+                            <option value="otolaryngologist">Отоларинголог</option>
+                            <option value="neurologist">Невролог</option>
+                            <option value="surgeon">Хірург</option>
+                        </select>
+                    </div>
+                    <button class="button">Підтвердити</button>
+                </form>
+            </article>
+            <article id="prescription">
+                <h1>Випис рецепту</h1>
+                <form class="make-prescription">
+                    <div class="fields">
+                        <label>Кому ФІО</label>
+                        <input class="form" type="text" id="name_patient" name="name_patient">
+                        <label>Препарат</label>
+                        <input class="form" type="text" id="preparation" name="preparation">
+                        <label>Кількість</label>
+                        <input class="form" type="text" id="preparation_number" name="preparation_number">
+                        <label>Дата створення</label>
+                        <input class="form" type="date" id="start_date" name="start_date">
+                        <label>Термін дії</label>
+                        <input class="form" type="date" id="finish_date" name="finish_date">
+                        <label>Спеціальність лікаря</label>
+                    </div>
+                    <button class="button">Підтвердити</button>
+                </form>
+            </article>
+
+            <div id="login-popup-doctor" class="modal">
+                <div class="content">
+                    <header>
+                        <h2>Увійти</h2>
+                        <a href="#" class="box-close">x</a>
+                    </header>
+                    <form>
+                        <div class="fields">
+                            <label>ФІО</label>
+                            <input class="form" type="text" id="login" name="login" placeholder="Введіть логін">
+                            <label>Пароль</label>
+                            <input class="form" type="password" id="password" name="password">
+                        </div>
+                        <button class="button">Увійти</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="registration-popup-doctor" class="modal">
+                <div class="content">
+                    <header>
+                        <h2>Реєстрація</h2>
+                        <a href="#" class="box-close">x</a>
+                    </header>
+                    <form>
+                        <div class="fields">
+                            <label>Логін</label>
+                            <input class="form" type="text" id="login" name="login" placeholder="Введіть логін">
+                            <label>Пароль</label>
+                            <input class="form" type="password" id="password" name="password">
+                            <label>Місто проживання</label>
+                            <select name="city" id="city">
+                                <option value="Kyiv">Київ</option>
+                                <option value="Zhytomyr">Житомир</option>
+                                <option value="Chernihiv">Чернигів</option>
+                                <option value="Sumy">Суми</option>
+                                <option value="Poltava">Полтава</option>
+                                <option value="Cherkasy">Черкаси</option>
+                                <option value="Vinnitsa">Вінниця</option>
+                                <option value="Khmelnytskyi">Хмельницький</option>
+                                <option value="Rivne">Рівне</option>
+                                <option value="Lutsk">Луцьк</option>
+                                <option value="Ternopil">Тернопіль</option>
+                                <option value="Lviv">Львів</option>
+                                <option value="Uzhhorod">Ужгород</option>
+                                <option value="Ivano-Frankivsk">Івано-Франківськ</option>
+                                <option value="Chernivtsi">Чернівці</option>
+                                <option value="Odesa">Одеса</option>
+                                <option value="Kirovohrad">Кіровоград</option>
+                                <option value="Mykolaiv">Миколаїв</option>
+                                <option value="Kherson">Херсон</option>
+                                <option value="Zaporizhzhia">Запоріжжя</option>
+                                <option value="Dnipropetrovsk">Дніпропетровськ</option>
+                                <option value="Kharkiv">Харків</option>
+                                <option value="Donetsk">Донецьк</option>
+                                <option value="Luhansk">Луганцьк</option>
+                                <option value="Sevastopol">Севастополь</option>
+                            </select>
+                            <label>Номер телефону</label>
+                            <input class="form" type="tel" id="phone" name="phone" placeholder="+380xx-xxx-xx-xx">
+                            <label>Електрона пошта</label>
+                            <input class="form" type="email" id="email" name="email" placeholder="qwerty@gmail.com">
+                            <label>Sex</label>
+                            <span>
+                                <label for="m">male</label>
+                                <input class="form" type="radio" name="sex" id="m" value="male">
+                                <label for="f">female</label>
+                                <input class="form" type="radio" name="sex" id="f" value="female">
+                            </span> 
+                            <label>Спеціальність</label>
+                            <select name="specialty" id="specialty">
+                                <option value="pediatrician">Педіатр</option>
+                                <option value="therapist">Терапевт</option>
+                                <option value="family doctor">Сімейний лікар</option>
+                                <option value="cardiologist">Кардіолог</option>
+                                <option value="otolaryngologist">Отоларинголог</option>
+                                <option value="neurologist">Невролог</option>
+                                <option value="surgeon">Хірург</option>
+                            </select>
+                        </div>
+                        <button class="button">Зареєструватись</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="card-patient" class="modal">
+                <div class="content">
+                    <label>ФІО</label>
+                    <label>Стать</label>
+                    <label>Телефон</label>
+                    <label>Пошта</label>
+                    <label>Симптоми</label>
+                    <label>Діагноз</label>
+                    <label>Лікування</label>
+                    <label>Історія хвороби</label>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

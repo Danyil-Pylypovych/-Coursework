@@ -1,0 +1,218 @@
+$color-site: #1c8d0a;
+$shadow: 1px 1px black;
+$content-font: Arial;
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1{
+        color: $color-site;
+        text-align: center;
+        text-shadow: $shadow;
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+    }
+
+    .head{
+        display: flex;
+        align-items: center;
+    }
+    a{
+        font-weight: bold;
+        color: $color-site;
+        text-decoration: none;
+        margin-right: 2vw;
+        font-size: 22px;
+
+        &:hover{
+            text-shadow: $shadow;
+        }
+    }
+}
+
+article{
+    h1{
+        align-self: center;
+    }
+
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+
+    &::before{
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: black;
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+
+
+#online-admission, #clinics, #my-patient, #reception-schedule{
+    display: flex;
+    flex-direction: column;
+    #filter{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        #filter-element{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            *{
+                padding: 5px;
+            }
+            border-right: 1.7px dotted rgb(83,83,83);
+            padding: 0.5vw 1vw 0.5vw 1vw;
+            font-family: $content-font;
+            font-weight: bolder;
+            color: rgb(120,120,120);
+            font-size: 13px;
+            &:last-of-type{
+                border-right: none;
+            }
+            select{
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+            }
+            &:hover{
+                color: black;
+            }
+        }
+    }
+}
+
+.doctor, .clinic, .patient{
+    a{
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 50%;
+        border-color: $color-site;
+        border-width: 5px;
+        border-style: solid;
+        width: 10vw;
+        height: 10vw;
+        overflow: hidden;
+
+        .img{
+            background-image: url('noavatar.jpg');
+            background-size: cover;
+            transition: 0.3s all;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+    
+    display: flex;
+    flex-direction: column;
+    margin: 1vw;
+}
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(56, 56, 56, 0.7);
+    backdrop-filter: blur(5px);
+    transition: all 0.5s;
+    visibility: hidden;
+    opacity: 0;
+
+    &:target{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .content{
+        position: absolute;
+        background: white;
+        width: 400px;
+        height: 475px;
+        border-radius: 4px;
+
+        header{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgb(40, 40, 40);
+            color: white;
+            font-family: $content-font;
+            align-items: center;
+            padding: 0vh 1vw;
+
+            .box-close{
+                font-size: 30px;
+                color: white;
+                text-decoration: none;
+    
+                &:hover{
+                    color: $color-site;
+                }
+            }
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-items: flex-start;
+            padding: 1vh 1vw;
+
+            .fields{
+                display: flex;
+                flex-direction: column;
+                margin-top: 1vh;
+                margin-bottom: 1vh;
+                select, input{
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    resize: vertical;
+                }
+            }
+
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+
+            figure{
+                text-align: center;
+            }
+        }
+    }
+}
+
+#referral, #prescription{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    padding: 1vh 1vw;
+
+    .fields{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        select, input{
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+    }
+}
