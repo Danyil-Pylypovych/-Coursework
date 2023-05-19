@@ -4,9 +4,9 @@ const patient = require('../models/user')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 const config = require('../config/db')
+const jsonParser = express.json()
 
-
-router.post('/reg', function(req, res) {
+router.post('/reg', jsonParser, function(req, res) {
     let newPatient = new patient({
         name: req.body.name,
         password: req.body.password,
@@ -15,13 +15,15 @@ router.post('/reg', function(req, res) {
         phone: req.body.phone,
         gender: req.body.gender
     })
-    patient.addPatient(newPatient, function(err, patient) {
+     
+    /*patient.addPatient(newPatient, function(err, patient) {
         if(err) {
-            res.json({success: false, msg: "Користувач не додан"})
+            return res.json({success: false, msg: "Користувач не додан"})
         } else {
-            res.json({success: true, msg: "Користувач додан"})
+            return res.json({success: true, msg: "Користувач додан"})
         }
-    })
+    })*/
+    return res.json({success: true, msg: "Користувач додан"})
 })
 
 router.post('/auth', function(req, res) {
@@ -37,11 +39,11 @@ router.post('/auth', function(req, res) {
         patient.comparePass(password, user.password, function(err, isMatch) {
             if(err) throw err
             if(isMatch) {
-                const token = jwt.sign(user, config.secret, {
+                const token = jwt.sign(user.toJSON(), config.secret, {
                     expiresIn: 3600 * 12
                 })
 
-                res.json({
+                return res.json({
                     success: true,
                     token: 'JWT' + token,
                     user: {

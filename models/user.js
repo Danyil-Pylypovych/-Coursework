@@ -33,7 +33,7 @@ const patient = module.exports = mongoose.model('patient', patientSchema)
 
 module.exports.getPatientByLogin = function(name, callback) {
     const query = {name: name}
-    patient.findOne(query, callback)
+    patient.findOne(query)
 }
 
 module.exports.getPatientByID = function(id, callback) {
@@ -41,14 +41,8 @@ module.exports.getPatientByID = function(id, callback) {
 }
 
 module.exports.addPatient = async function(newPatient, callback) {
-    bcrypt.genSalt(10, function(err, salt) {
-        if(err = true) throw err
-        bcrypt.hash(newPatient.password, salt, function(err, hash) {
-            if(err = true) throw err
-            newPatient.password = hash
-            newPatient.save(callback)
-        })
-    })
+    const addpat = new patient(newPatient)
+    addpat.save().then(() => console.log("Yes"))
 }
 
 module.exports.comparePass = function(passFromPatient, patientDBPass, callback) {
